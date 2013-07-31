@@ -28,24 +28,26 @@ class MainWin(Gui.QMainWindow):
         self.centralWidget = Gui.QWidget(self)
         self.setCentralWidget(self.centralWidget)
 
+
+
         self.process_list = Gui.QComboBox()
         self.process_list.setParent(self.centralWidget)
         self.process_list.resize(300, 25)
+        self.process_list.move(5, 5)
 
         self.btn_refresh = Gui.QPushButton()
         self.btn_refresh.setText('refresh')
         self.btn_refresh.setParent(self.centralWidget)
-        self.btn_refresh.move(310, 0)
+        self.btn_refresh.move(310, 5)
 
         self.btn_detach = Gui.QPushButton()
         self.btn_detach.setText('detach')
         self.btn_detach.setParent(self.centralWidget)
-        self.btn_detach.move(350, 0)
+        self.btn_detach.move(self.btn_refresh.x()+100, 5)
 
         self.edit_proto = Gui.QLineEdit()
         self.edit_proto.setParent(self.centralWidget)
-        self.edit_proto.move(0, 30)
-        # self.process_list.connect()
+        self.edit_proto.move(5, 35)
 
     def addConnection(self):
         self.btn_refresh.mousePressEvent = self.on_comboBox_click
